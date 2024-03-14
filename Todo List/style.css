@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 5rem auto;
+}
+.container .newtask h1 {
+  margin: 1rem auto;
+  color: #152238;
+  text-align: center;
+}
+.container .newtask input {
+  width: 24rem;
+  margin: 0 auto;
+  height: 2rem;
+  border: none;
+  border-bottom: 3px solid #152238;
+}
+.container .newtask button {
+  background-color: #152238;
+  color: white;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 5px;
+  font-size: medium;
+  cursor: pointer;
+}
+.container .newtask input:focus {
+  outline: none;
+}
+.container .tasks {
+  margin-top: 2rem;
+}
+.container .task {
+  width: 26.5rem;
+  height: 2rem;
+  color: #152238;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  margin: 0.2rem auto;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.075);
+  color: #152238;
+  font-weight: 500;
+}
+.container .task .taskname {
+  word-wrap: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 24rem;
+  padding: 5px;
+}
+.container .task .deletebtn {
+  height: 2rem;
+  width: 2.2rem;
+  color: red;
+  border: none;
+  font-weight: bolder;
+  background: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 576px) {
+  .newtask input {
+    width: 12rem !important;
+  }
+  .task {
+    width: 55% !important;
+  }
+  .task .deletebtn {
+    padding: 10px;
+  }
+}/*# sourceMappingURL=style.css.map */
