@@ -11,27 +11,14 @@
   align-items: center;
   height: 3rem;
   width: 100%;
-  background-color: darkblue;
+  background-color: #152238;
   color: white;
   justify-content: flex-end;
 }
-
 .navigationBar a {
   text-decoration: none;
   color: white;
   padding: 0 1rem;
-}
-
-footer {
-  display: flex;
-  height: 2rem;
-  background-color: darkblue;
-  color: white;
-  align-items: center;
-  justify-content: center;
-  bottom: 0;
-  position: absolute;
-  width: 100%;
 }
 
 .calculator {
@@ -41,17 +28,15 @@ footer {
   justify-content: center;
   width: 24rem;
   height: 60%;
-  margin: 7rem auto;
+  margin: 9rem auto;
 }
-
-.display {
+.calculator .display {
   width: 100%;
   height: 4rem;
   border: 5px solid rgb(181, 174, 174);
   border-radius: 5px;
 }
-
-.row {
+.calculator .row {
   display: flex;
   justify-content: space-between;
   background: #2c2b2b;
@@ -72,10 +57,22 @@ footer {
   cursor: pointer;
 }
 
+footer {
+  display: flex;
+  height: 2rem;
+  background-color: #152238;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+}
+
 @media screen and (max-width: 425px) {
   .calculator {
     width: 90%;
-    margin: 3rem auto;
+    margin: 5rem auto;
   }
   .row input {
     width: 45%;
