@@ -1,12 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 $primary_color: #152238;
+$text_color: #ffffff;
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  background-color: $primary_color;
 }
 
 .container {
@@ -18,7 +20,7 @@ $primary_color: #152238;
 
   .newtask h1 {
     margin: 1rem auto;
-    color: $primary_color;
+    color: $text_color;
     text-align: center;
   }
 
@@ -27,21 +29,30 @@ $primary_color: #152238;
     margin: 0 auto;
     height: 2rem;
     border: none;
-    border-bottom: 3px solid $primary_color;
+    border-bottom: 3px solid $text_color;
   }
 
   .newtask button {
-    background-color: $primary_color;
-    color: white;
-    height: 2rem;
-    width: 2rem;
+    background-color: $text_color;
+    color: $primary_color;
+    height: 1.8rem;
+    width: 1.8rem;
     border-radius: 5px;
-    font-size: medium;
+    font-size: large;
+    font-weight: 500;
     cursor: pointer;
+    border: none;
+    transition: transform 0.6s ease;
+  }
+
+  .newtask button:hover {
+    transform: rotate(180deg);
+    border-radius: 50%;
   }
 
   .newtask input:focus {
     outline: none;
+    color: #ffffff;
   }
 
   .tasks {
@@ -50,24 +61,23 @@ $primary_color: #152238;
 
   .task {
     width: 26.5rem;
-    height: 2rem;
-    color: $primary_color;
     display: flex;
     align-items: center;
     justify-content: space-between;
     display: flex;
-    margin: 0.2rem auto;
-    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.075);
-    color: $primary_color;
+    margin: 0.4rem auto;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px 0px rgba(253, 253, 253, 0.63);
     font-weight: 500;
 
     .taskname {
-      word-wrap: break-word;
       overflow: hidden;
-      text-overflow: ellipsis;
       white-space: nowrap;
+      text-overflow: ellipsis;
       width: 24rem;
       padding: 5px;
+      height: 2rem;
+      color: $text_color;
     }
 
     .deletebtn {
@@ -78,17 +88,26 @@ $primary_color: #152238;
       font-weight: bolder;
       background: none;
       cursor: pointer;
+      transition: 0.1s linear;
+    }
+    .deletebtn:hover {
+      font-size: large;
     }
   }
 }
+
 @media screen and (max-width: 576px) {
   .newtask input {
     width: 12rem !important;
   }
+
   .task {
     width: 55% !important;
+
     .deletebtn {
       padding: 10px;
+      display: flex;
+      align-items: center;
     }
   }
 }

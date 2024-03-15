@@ -7,7 +7,6 @@ document.querySelector(".addtask").onclick = () => {
         <span class="taskname">${taskInput.value}</span>
         <button class="deletebtn">X</button>
       </div>`;
-
     taskInput.value = "";
 
     DeleteTask();
@@ -22,6 +21,3 @@ function DeleteTask() {
     };
   }
 }
-
-// Initial setup
-updateDeleteButtons();
