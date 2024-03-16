@@ -10,6 +10,7 @@ document.querySelector(".addtask").onclick = () => {
     taskInput.value = "";
 
     DeleteTask();
+    ApplyStrike();
   }
 };
 
@@ -18,6 +19,16 @@ function DeleteTask() {
   for (var i = 0; i < current_tasks.length; i++) {
     current_tasks[i].onclick = function () {
       this.parentNode.remove();
+    };
+  }
+}
+
+function ApplyStrike() {
+  var tasknames = document.querySelectorAll(".taskname");
+  for (var i = 0; i < tasknames.length; i++) {
+    tasknames[i].ondblclick = function () {
+      this.style.textDecoration = "line-through";
+      this.style.color = "red";
     };
   }
 }

@@ -1,0 +1,84 @@
+//1. Write a factorial program of given range: 0 - 10 using closure.
+const calculate_factorial = () => {
+  const factorial = (n) => {
+    if (n == 0 || n == 1) {
+      return 1;
+    }
+    return n * factorial(n - 1);
+  };
+  return factorial;
+};
+for (let i = 0; i <= 10; i++) {
+  console.log(`Factorial of ${i} is: ${calculate_factorial()(i)}`);
+}
+
+//********************************************************************************************** */
+// 2
+
+function calculate(x) {
+  function multiply(y) {
+    return x * y;
+  }
+  return multiply;
+}
+const multiply3 = calculate(3);
+const multiply4 = calculate(4);
+
+console.log(multiply3);
+console.log(multiply3());
+console.log(multiply3(6));
+console.log(multiply4(2));
+
+// Output of above code is:
+
+// ƒ multiply(y) {      ==> here multiply3 return the inner multiply function returned by the calculate function wich has argyment 3
+//     return x * y;
+//   }
+
+// NaN   ==> when we call multiply2() without passing argument then value of y is undefined fo the output is undefined*3 that produce NAN
+
+// 18    ==> when we call multiply3(6), x(which is 3) multiplued by y(which is 6) so the output is 18
+
+// 8     ==> when we call multiply4(2), x(which is 4) multiplied by y(which is 2) so the output is 8
+
+//*********************************************************************************************************** */
+//3
+function outset() {
+  var c = 12;
+  function outer(b) {
+    function inner() {
+      console.log(a, b, c);
+    }
+    let a = 10;
+    return inner;
+  }
+  return outer;
+}
+let a = 100;
+var close = outset()("Hi Closures");
+close();
+
+//Output of above code:
+//10 'Hi Closures' 12 ==> The output 10 'Hi Closures' 12 occurs because the inner function accesses a from its inner scope (set to 10), b from the argument passed to outer (set to "Hi Closures"), and c from the outer outset function's scope (set to 12).
+
+//******************************************************************************************************** */
+//4
+function setCount() {
+  let number = 0;
+  return function () {
+    console.log(number++);
+    console.log(++number);
+  };
+}
+const counter = setCount();
+counter();
+counter();
+counter();
+
+// Output of above code
+// 0   ==>console.log(number++) prints the current value of number (which is 0), then increments it by 1 that become 2
+// 2   ==>console.log(++number) increments the value of number by 1 first (which becomes 2) and then prints
+// 2   ==>console.log(number++) prints the current value of number (which is 2), then increments it by 1 that become 3
+// 4   ==>console.log(++number) increments the value of number by 1 first (which becomes 4) and then prints
+// 4   ==>console.log(number++) prints the current value of number (which is 4), then increments it by 1 that become 5
+// 6   ==>console.log(++number) increments the value of number by 1 first (which becomes 6) and then prints
