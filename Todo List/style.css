@@ -14,10 +14,25 @@
   flex-direction: column;
   margin: 5rem auto;
 }
-.container .newtask h1 {
+.container h1 {
   margin: 1rem auto;
   color: #ffffff;
   text-align: center;
+  font-family: cursive;
+  font-size: 3rem;
+  animation: glow 1s ease-in-out infinite alternate;
+  letter-spacing: 5px;
+}
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px #fff;
+  }
+  to {
+    text-shadow: 0 0 10px #fff;
+  }
+}
+.container .newtask {
+  margin-top: 1rem;
 }
 .container .newtask input {
   width: 24rem;
@@ -32,8 +47,8 @@
   height: 1.8rem;
   width: 1.8rem;
   border-radius: 5px;
-  font-size: large;
-  font-weight: 500;
+  font-size: larger;
+  font-weight: 600;
   cursor: pointer;
   border: none;
   transition: transform 0.6s ease;
@@ -68,6 +83,7 @@
   padding: 5px;
   height: 2rem;
   color: #ffffff;
+  cursor: pointer;
 }
 .container .task .deletebtn {
   height: 2rem;
@@ -86,6 +102,9 @@
 @media screen and (max-width: 576px) {
   .newtask input {
     width: 12rem !important;
+  }
+  h1 {
+    font-size: 1.5rem !important;
   }
   .task {
     width: 55% !important;
