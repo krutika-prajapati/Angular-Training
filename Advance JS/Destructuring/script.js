@@ -14,8 +14,9 @@
 // console.log(y); //7
 //Destructuring assignment extracts the first element of arrValue and assigns it to x. Since there is no second element in arrValue, y= 7.
 
-// const [a, b, ...[length]] = [1, 2, 3];
-// console.log(a, b, length); //1,2,3
+//const [a, b, ...[length]] = [1, 2, 3];
+//console.log(a, b, length); //1,2,3
+//a= 1,b=2,[length] extract the first element from the rest of the array, which is [3]. So, length is assigned the value 3.
 
 // const [a, b, ...{ length }] = [1, 2, 3];
 // console.log(a, b, length); //1,2,1

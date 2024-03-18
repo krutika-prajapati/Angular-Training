@@ -1,16 +1,32 @@
 //1. Write a factorial program of given range: 0 - 10 using closure.
-const calculate_factorial = () => {
-  const factorial = (n) => {
-    if (n == 0 || n == 1) {
+function factorialRange(start, end) {
+  let memo = {};
+
+  function factorial(n) {
+    if (n === 0 || n === 1) {
       return 1;
     }
-    return n * factorial(n - 1);
-  };
-  return factorial;
-};
-for (let i = 0; i <= 10; i++) {
-  console.log(`Factorial of ${i} is: ${calculate_factorial()(i)}`);
+
+    if (memo[n]) {
+      return memo[n];
+    } else {
+      memo[n] = n * factorial(n - 1);
+      return memo[n];
+    }
+  }
+
+  let factorials = [];
+  for (let i = start; i <= end; i++) {
+    factorials.push(factorial(i));
+  }
+
+  return factorials;
 }
+
+const result = factorialRange(0, 10);
+result.forEach((value, index) => {
+  console.log(`Factorial of ${index} is : ${value}`);
+});
 
 //********************************************************************************************** */
 // 2
@@ -59,7 +75,7 @@ var close = outset()("Hi Closures");
 close();
 
 //Output of above code:
-//10 'Hi Closures' 12 ==> The output 10 'Hi Closures' 12 occurs because the inner function accesses a from its inner scope (set to 10), b from the argument passed to outer (set to "Hi Closures"), and c from the outer outset function's scope (set to 12).
+//10 'Hi Closures' 12 ==> The output 10 'Hi Closures' 12 occurs because the inner function accesses 'a' from its inner scope (set to 10), b from the argument passed to outer (set to "Hi Closures"), and c from the outer outset function's scope (set to 12).
 
 //******************************************************************************************************** */
 //4
