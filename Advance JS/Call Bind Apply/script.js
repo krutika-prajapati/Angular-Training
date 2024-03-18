@@ -23,3 +23,8 @@ let printFullnameOfPerson2 = person1.fullname.bind(
   "How Are You?"
 );
 printFullnameOfPerson2();
+
+//Output:
+// Hello Priyanka Parekh How Are You?
+// Hello Priyanka Parekh How Are You?
+// Hello Priyanka Parekh How Are You?

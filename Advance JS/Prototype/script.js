@@ -12,6 +12,8 @@ Array.prototype.findmin = function () {
 let numbers = [23, 67, 45, 11, 5];
 let minnumber = numbers.findmin();
 console.log(`Minimum number is = ${minnumber}`);
+//Output:
+//Minimum number is = 5
 
 //custom method for Object
 
@@ -31,4 +33,4 @@ let myObject = {
   company: "Bacancy",
 };
 
-console.log(myObject.countproperties());
+console.log(myObject.countproperties()); //Output:3
