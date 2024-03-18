@@ -14,8 +14,12 @@ let person2 = {
   lastname: "Parekh",
 };
 
-person1.fullname.call(person2, "Hello", "Ma'am");
-person1.fullname.apply(person2, ["Hello", "Ma'am"]);
+person1.fullname.call(person2, "Hello", "How Are You?");
+person1.fullname.apply(person2, ["Hello", "How Are You?"]);
 
-let printFullnameOfPerson2 = person1.fullname.bind(person2, "Hello", "Ma'am");
+let printFullnameOfPerson2 = person1.fullname.bind(
+  person2,
+  "Hello",
+  "How Are You?"
+);
 printFullnameOfPerson2();
