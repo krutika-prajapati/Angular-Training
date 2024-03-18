@@ -38,11 +38,11 @@ $text_color: #ffffff;
     }
   }
 
-  .newtask {
+  .newTask {
     margin-top: 1rem;
   }
 
-  .newtask input {
+  .newTask input {
     width: 24rem;
     margin: 0 auto;
     height: 2rem;
@@ -50,7 +50,7 @@ $text_color: #ffffff;
     border-bottom: 3px solid $text_color;
   }
 
-  .newtask button {
+  .newTask button {
     background-color: $text_color;
     color: $primary_color;
     height: 1.8rem;
@@ -63,12 +63,12 @@ $text_color: #ffffff;
     transition: transform 0.6s ease;
   }
 
-  .newtask button:hover {
+  .newTask button:hover {
     transform: rotate(180deg);
     border-radius: 50%;
   }
 
-  .newtask input:focus {
+  .newTask input:focus {
     outline: none;
     color: #ffffff;
   }
@@ -88,7 +88,7 @@ $text_color: #ffffff;
     box-shadow: 0px 2px 4px 0px rgba(253, 253, 253, 0.63);
     font-weight: 500;
 
-    .taskname {
+    .taskName {
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
@@ -99,7 +99,7 @@ $text_color: #ffffff;
       cursor: pointer;
     }
 
-    .deletebtn {
+    .deleteBtn {
       height: 2rem;
       width: 2.2rem;
       color: red;
@@ -110,14 +110,14 @@ $text_color: #ffffff;
       transition: 0.1s linear;
     }
 
-    .deletebtn:hover {
+    .deleteBtn:hover {
       font-size: large;
     }
   }
 }
 
 @media screen and (max-width: 576px) {
-  .newtask input {
+  .newTask input {
     width: 12rem !important;
   }
 
@@ -128,7 +128,7 @@ $text_color: #ffffff;
   .task {
     width: 55% !important;
 
-    .deletebtn {
+    .deleteBtn {
       padding: 10px;
       display: flex;
       align-items: center;

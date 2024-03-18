@@ -10,7 +10,7 @@ $secondary_bgcolor: #2c2b2b;
   font-family: "Poppins", sans-serif;
 }
 
-.navigation-bar {
+.navigationBar {
   display: flex;
   align-items: center;
   height: 3rem;
@@ -83,12 +83,12 @@ footer {
   .row input {
     width: 45%;
   }
-  .navigation-bar a,
+  .navigationBar a,
   footer {
     font-size: 0.8rem;
   }
 
-  .navigation-bar {
+  .navigationBar {
     display: flex;
     justify-content: space-between;
   }

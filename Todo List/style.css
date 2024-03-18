@@ -31,17 +31,17 @@
     text-shadow: 0 0 10px #fff;
   }
 }
-.container .newtask {
+.container .newTask {
   margin-top: 1rem;
 }
-.container .newtask input {
+.container .newTask input {
   width: 24rem;
   margin: 0 auto;
   height: 2rem;
   border: none;
   border-bottom: 3px solid #ffffff;
 }
-.container .newtask button {
+.container .newTask button {
   background-color: #ffffff;
   color: #152238;
   height: 1.8rem;
@@ -53,11 +53,11 @@
   border: none;
   transition: transform 0.6s ease;
 }
-.container .newtask button:hover {
+.container .newTask button:hover {
   transform: rotate(180deg);
   border-radius: 50%;
 }
-.container .newtask input:focus {
+.container .newTask input:focus {
   outline: none;
   color: #ffffff;
 }
@@ -75,7 +75,7 @@
   box-shadow: 0px 2px 4px 0px rgba(253, 253, 253, 0.63);
   font-weight: 500;
 }
-.container .task .taskname {
+.container .task .taskName {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -85,7 +85,7 @@
   color: #ffffff;
   cursor: pointer;
 }
-.container .task .deletebtn {
+.container .task .deleteBtn {
   height: 2rem;
   width: 2.2rem;
   color: red;
@@ -95,12 +95,12 @@
   cursor: pointer;
   transition: 0.1s linear;
 }
-.container .task .deletebtn:hover {
+.container .task .deleteBtn:hover {
   font-size: large;
 }
 
 @media screen and (max-width: 576px) {
-  .newtask input {
+  .newTask input {
     width: 12rem !important;
   }
   h1 {
@@ -109,7 +109,7 @@
   .task {
     width: 55% !important;
   }
-  .task .deletebtn {
+  .task .deleteBtn {
     padding: 10px;
     display: flex;
     align-items: center;

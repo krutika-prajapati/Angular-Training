@@ -6,7 +6,7 @@
   font-family: "Poppins", sans-serif;
 }
 
-.navigation-bar {
+.navigationBar {
   display: flex;
   align-items: center;
   height: 3rem;
@@ -15,7 +15,7 @@
   color: white;
   justify-content: flex-end;
 }
-.navigation-bar a {
+.navigationBar a {
   text-decoration: none;
   color: white;
   padding: 0 1rem;
@@ -77,11 +77,11 @@ footer {
   .row input {
     width: 45%;
   }
-  .navigation-bar a,
+  .navigationBar a,
   footer {
     font-size: 0.8rem;
   }
-  .navigation-bar {
+  .navigationBar {
     display: flex;
     justify-content: space-between;
   }

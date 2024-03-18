@@ -1,5 +1,5 @@
 //custom method for Array
-Array.prototype.findmin = function () {
+Array.prototype.findMin = function () {
   let min = this[0];
   for (let i = 0; i < this.length; i++) {
     if (this[i] < min) {
@@ -10,14 +10,14 @@ Array.prototype.findmin = function () {
 };
 
 let numbers = [23, 67, 45, 11, 5];
-let minnumber = numbers.findmin();
+let minnumber = numbers.findMin();
 console.log(`Minimum number is = ${minnumber}`);
 //Output:
 //Minimum number is = 5
 
 //custom method for Object
 
-Object.prototype.countproperties = function () {
+Object.prototype.countProperties = function () {
   let count = 0;
   for (let key in this) {
     if (this.hasOwnProperty(key)) {
@@ -33,4 +33,4 @@ let myObject = {
   company: "Bacancy",
 };
 
-console.log(myObject.countproperties()); //Output:3
+console.log(myObject.countProperties()); //Output:3

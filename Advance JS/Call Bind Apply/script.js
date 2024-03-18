@@ -1,7 +1,7 @@
 let person1 = {
   firstname: "Krutika",
   lastname: "Prajapati",
-  fullname: function (prefix, suffix) {
+  fullName: function (prefix, suffix) {
     let fullName = `${this.firstname} ${this.lastname}`;
     if (prefix) fullName = `${prefix} ${fullName}`;
     if (suffix) fullName += ` ${suffix}`;
@@ -14,10 +14,10 @@ let person2 = {
   lastname: "Parekh",
 };
 
-person1.fullname.call(person2, "Hello", "How Are You?");
-person1.fullname.apply(person2, ["Hello", "How Are You?"]);
+person1.fullName.call(person2, "Hello", "How Are You?");
+person1.fullName.apply(person2, ["Hello", "How Are You?"]);
 
-let printFullnameOfPerson2 = person1.fullname.bind(
+let printFullnameOfPerson2 = person1.fullName.bind(
   person2,
   "Hello",
   "How Are You?"
