@@ -3,16 +3,16 @@ const buttons = document.getElementsByClassName("btn");
 const backspace = document.getElementById("backspace");
 const historyButton = document.querySelector(".history");
 const arithmeticOperators = ["+", "-", "%", "×", "÷", "."];
-const numberPattern = /[0-9(]$/;
 
 let currentValue = "";
 let lastOperation = "";
 let history = [];
 
+// Add Expression to History Array
 const addToHistory = (currentValue) => {
   history.push(currentValue);
-  console.log(history);
 };
+
 const evaluateResult = () => {
   const replaceMap = {
     "×": "*",
@@ -40,13 +40,13 @@ const evaluateResult = () => {
     addToHistory(currentValue);
     lastOperation = "=";
   } catch (error) {
-    console.log(error);
     currentValue = "ERROR";
     display.value = currentValue;
     lastOperation = "=";
   }
 };
 
+// Event listener for button click
 for (let i = 0; i < buttons.length; i++) {
   const button = buttons[i];
   button.addEventListener("click", function () {
@@ -62,6 +62,7 @@ for (let i = 0; i < buttons.length; i++) {
       ) {
         display.value = "";
       } else if (
+        (lastOperation === "=" && arithmeticOperators.includes(value)) ||
         (arithmeticOperators.includes(
           currentValue.charAt(currentValue.length - 1)
         ) &&
@@ -80,29 +81,30 @@ for (let i = 0; i < buttons.length; i++) {
         display.value = currentValue;
       }
     } catch (error) {
-      console.log(error);
       currentValue = "ERROR";
       display.value = currentValue;
     }
   });
 }
 
+// Event listener for backspace button
 backspace.addEventListener("click", function () {
-  currentValue = currentValue.slice(0, -1);
-  display.value = currentValue;
+  if (currentValue !== "") {
+    currentValue = currentValue.slice(0, -1);
+    display.value = currentValue;
+  }
 });
 
+// Event listener for history button
 historyButton.addEventListener("click", () => {
   let historyText = "";
-
   for (let i = 0; i < history.length; i++) {
     historyText += history[i] + "\n";
   }
-
   display.value = historyText;
 });
 
-// Tooltip initialization
+// Tooltip
 var tooltipTriggerList = [].slice.call(
   document.querySelectorAll('[data-bs-toggle="tooltip"]')
 );
