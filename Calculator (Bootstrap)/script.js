@@ -2,7 +2,7 @@ const display = document.getElementById("calculator-display");
 const buttons = document.getElementsByClassName("btn");
 const backspace = document.getElementById("backspace");
 const historyButton = document.querySelector(".history");
-const arithmeticOperators = ["+", "-", "%", "×", "÷", "."];
+const arithmeticOperators = ["+", "-", "%", "×", "÷", ".", ")"];
 
 let currentValue = "";
 let lastOperation = "";
@@ -66,6 +66,7 @@ for (let i = 0; i < buttons.length; i++) {
         (arithmeticOperators.includes(
           currentValue.charAt(currentValue.length - 1)
         ) &&
+          currentValue.charAt(currentValue.length - 1) !== ")" &&
           arithmeticOperators.includes(value)) ||
         (currentValue.charAt(currentValue.length - 1) == "(" &&
           arithmeticOperators.includes(value))
