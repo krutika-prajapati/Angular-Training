@@ -1,20 +1,27 @@
-const display = document.getElementById("calcDisplay");
+const display = document.getElementById("calculator-display");
 const buttons = document.getElementsByClassName("btn");
+const backspace = document.getElementById("backspace");
+const historyButton = document.querySelector(".history");
+const arithmeticOperators = ["+", "-", "%", "×", "÷", "."];
+const numberPattern = /[0-9(]$/;
 
 let currentValue = "";
 let lastOperation = "";
+let history = [];
 
-function evaluateResult() {
+const addToHistory = (currentValue) => {
+  history.push(currentValue);
+  console.log(history);
+};
+const evaluateResult = () => {
   const replaceMap = {
     "×": "*",
     "÷": "/",
     "%": "*0.01",
     sin: "Math.sin",
     cos: "Math.cos",
-    "∛": "Math.cbrt",
     π: "Math.PI",
     log: "Math.log10",
-    e: "Math.E",
     tan: "Math.tan",
     "√": "Math.sqrt",
   };
@@ -30,13 +37,15 @@ function evaluateResult() {
     const result = eval(convertedValue);
     currentValue = expression + " = " + result.toString();
     display.value = currentValue;
+    addToHistory(currentValue);
     lastOperation = "=";
   } catch (error) {
     console.log(error);
     currentValue = "ERROR";
     display.value = currentValue;
+    lastOperation = "=";
   }
-}
+};
 
 for (let i = 0; i < buttons.length; i++) {
   const button = buttons[i];
@@ -47,6 +56,19 @@ for (let i = 0; i < buttons.length; i++) {
         currentValue = "";
         display.value = currentValue;
         lastOperation = "";
+      } else if (
+        (currentValue === "" && arithmeticOperators.includes(value)) ||
+        (currentValue === "ERROR" && arithmeticOperators.includes(value))
+      ) {
+        display.value = "";
+      } else if (
+        (arithmeticOperators.includes(
+          currentValue.charAt(currentValue.length - 1)
+        ) &&
+          arithmeticOperators.includes(value)) ||
+        (currentValue.charAt(currentValue.length - 1) == "(" &&
+          arithmeticOperators.includes(value))
+      ) {
       } else if (value == "=") {
         evaluateResult();
       } else {
@@ -64,6 +86,21 @@ for (let i = 0; i < buttons.length; i++) {
     }
   });
 }
+
+backspace.addEventListener("click", function () {
+  currentValue = currentValue.slice(0, -1);
+  display.value = currentValue;
+});
+
+historyButton.addEventListener("click", () => {
+  let historyText = "";
+
+  for (let i = 0; i < history.length; i++) {
+    historyText += history[i] + "\n";
+  }
+
+  display.value = historyText;
+});
 
 // Tooltip initialization
 var tooltipTriggerList = [].slice.call(

@@ -23,38 +23,40 @@
             <div class="offset-md-3 col-md-6 col-12">
                 <div class="card">
                     <div class="card-body">
-                        <input id="calcDisplay" readonly type="text"
-                            class="form-control form-control-lg text-end display" aria-label=".form-control-lg example">
+                        <textarea class="form-control text-end display overflow-auto" id="calculator-display"
+                            rows="3"></textarea>
+                        <!-- <input id="calculator-display" readonly type="text" class="form-control text-end display"
+                            aria-label=".form-control-lg example"> -->
 
                         <!-- Calculator buttons -->
                         <div class="row gx-2">
                             <div class="col-3">
                                 <button type="button" class="btn w-100 mt-2" data-bs-toggle="tooltip"
                                     data-bs-placement="top" data-bs-title="sin(x)"
-                                    data-bs-custom-class="customTooltip">sin</button>
+                                    data-bs-custom-class="custom-tooltip">sin</button>
                             </div>
                             <div class="col-3">
                                 <button type="button" class="btn w-100 mt-2" data-bs-toggle="tooltip"
                                     data-bs-placement="top" data-bs-title="cos(x)"
-                                    data-bs-custom-class="customTooltip">cos</button>
+                                    data-bs-custom-class="custom-tooltip">cos</button>
                             </div>
                             <div class="col-3">
-                                <button type="button" class="btn w-100 mt-2" data-bs-toggle="tooltip"
-                                    data-bs-placement="top" data-bs-title="tan(x)"
-                                    data-bs-custom-class="customTooltip">tan</button>
+                                <button type="button" class="btn w-100 mt-2" id="backspace"><i
+                                        class="fa fa-long-arrow-left" aria-hidden="true"></i></button>
                             </div>
                             <div class="col-3">
-                                <button type="button" class="btn w-100 mt-2" data-bs-toggle="tooltip"
-                                    data-bs-placement="top" data-bs-title="∛(x)"
-                                    data-bs-custom-class="customTooltip">∛</button>
+                                <button type="button" class="btn w-100 mt-2 history"><i class="fa fa-history"
+                                        aria-hidden="true"></i></button>
                             </div>
                             <div class="col-3">
                                 <button type="button" class="btn w-100 mt-2" data-bs-toggle="tooltip"
                                     data-bs-placement="left" data-bs-title="log(x)"
-                                    data-bs-custom-class="customTooltip">log</button>
+                                    data-bs-custom-class="custom-tooltip">log</button>
                             </div>
                             <div class="col-3">
-                                <button type="button" class="btn w-100 mt-2">e</button>
+                                <button type="button" class="btn w-100 mt-2" data-bs-toggle="tooltip"
+                                    data-bs-placement="top" data-bs-title="tan(x)"
+                                    data-bs-custom-class="custom-tooltip">tan</button>
                             </div>
                             <div class="col-3">
                                 <button type="button" class="btn w-100 mt-2">π</button>
@@ -62,7 +64,7 @@
                             <div class="col-3">
                                 <button type="button" class="btn w-100 mt-2" data-bs-toggle="tooltip"
                                     data-bs-placement="right" data-bs-title="√(x)"
-                                    data-bs-custom-class="customTooltip">√</button>
+                                    data-bs-custom-class="custom-tooltip">√</button>
                             </div>
                             <div class="col-3">
                                 <button type="button" class="btn w-100 mt-2">(</button>
@@ -133,7 +135,7 @@
     </div>
 
     <!-- footer  -->
-    <footer class="pt-3 mt-2 bottom-0 w-100">
+    <footer class="pt-3  bottom-0 w-100">
         <ul class="nav d-flex justify-content-center border-top">
             <li class="nav-item"><a href="" class="nav-link px-4 text-light"><i class="fa fa-home fs-4"
                         aria-hidden="true"></i></a></li>

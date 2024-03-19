@@ -21,7 +21,9 @@ body {
 .card-body {
   padding: 1.5rem;
 }
-
+.display {
+  overflow-y: scroll;
+}
 .btn,
 .display {
   border-radius: 15px;
@@ -41,9 +43,9 @@ body {
 }
 
 .display {
-  height: 5rem !important;
+  overflow-y: scroll;
 }
 
-.customTooltip {
+.custom-tooltip {
   --bs-tooltip-bg: $primaryHoverColor;
 }
