@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+$primaryBgColor: rgba(255, 255, 255, 0.15);
+$primaryBorder: 1px solid rgba(255, 255, 255, 0.1);
+body {
+  background-image: url(Background.jpg);
+  background-size: cover;
+  font-family: "Poppins", sans-serif;
+}
+
+.card {
+  color: #fff;
+  background-color: $primaryBgColor;
+  border: $primaryBorder;
+  width: 100%;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: rgba(250, 245, 245, 0.24) 0px 0px 0.25em;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.btn,
+.display {
+  border-radius: 15px;
+  background-color: $primaryBgColor;
+  border: $primaryBorder;
+  backdrop-filter: blur(30px);
+  color: white;
+}
+
+.btn:hover {
+  background-color: rgb(0 82 142);
+}
+
+.display:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#calcDisplay {
+  height: 5rem !important;
+}
+
+.customTooltip {
+  --bs-tooltip-bg: rgb(0 82 142);
+}

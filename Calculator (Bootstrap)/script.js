@@ -2,25 +2,35 @@ const display = document.getElementById("calcDisplay");
 const buttons = document.getElementsByClassName("btn");
 
 let currentValue = "";
+let lastOperation = "";
 
 function evaluateResult() {
-  const convertedValue = currentValue
-    .replace("×", "*")
-    .replace("÷", "/")
-    .replace("%", "*0.01")
-    .replace("sin", "Math.sin")
-    .replace("cos", "Math.cos")
-    .replace("∛", "Math.cbrt")
-    .replace("π", "Math.PI")
-    .replace("log", "Math.log10")
-    .replace("e", "Math.E")
-    .replace("tan", "Math.tan")
-    .replace("√", "Math.sqrt");
+  const replaceMap = {
+    "×": "*",
+    "÷": "/",
+    "%": "*0.01",
+    sin: "Math.sin",
+    cos: "Math.cos",
+    "∛": "Math.cbrt",
+    π: "Math.PI",
+    log: "Math.log10",
+    e: "Math.E",
+    tan: "Math.tan",
+    "√": "Math.sqrt",
+  };
+
+  let expression = currentValue;
+  let convertedValue = currentValue;
+  Object.entries(replaceMap).forEach(([key, value]) => {
+    const regex = new RegExp(key, "g");
+    convertedValue = convertedValue.replace(regex, value);
+  });
 
   try {
     const result = eval(convertedValue);
-    currentValue = result.toString();
+    currentValue = expression + " = " + result.toString();
     display.value = currentValue;
+    lastOperation = "=";
   } catch (error) {
     console.log(error);
     currentValue = "ERROR";
@@ -36,9 +46,14 @@ for (let i = 0; i < buttons.length; i++) {
       if (value == "AC") {
         currentValue = "";
         display.value = currentValue;
+        lastOperation = "";
       } else if (value == "=") {
         evaluateResult();
       } else {
+        if (lastOperation === "=") {
+          currentValue = "";
+          lastOperation = "";
+        }
         currentValue += value;
         display.value = currentValue;
       }
@@ -49,3 +64,11 @@ for (let i = 0; i < buttons.length; i++) {
     }
   });
 }
+
+// Tooltip initialization
+var tooltipTriggerList = [].slice.call(
+  document.querySelectorAll('[data-bs-toggle="tooltip"]')
+);
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl);
+});
