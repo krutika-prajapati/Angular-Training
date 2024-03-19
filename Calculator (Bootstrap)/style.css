@@ -39,10 +39,13 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-#calcDisplay {
-  height: 5rem !important;
+.custom-tooltip {
+  --bs-tooltip-bg: $primaryHoverColor;
 }
 
-.customTooltip {
-  --bs-tooltip-bg: rgb(0 82 142);
+@media (min-width: 1441px) {
+  footer {
+    position: absolute;
+    bottom: 0;
+  }
 }/*# sourceMappingURL=style.css.map */

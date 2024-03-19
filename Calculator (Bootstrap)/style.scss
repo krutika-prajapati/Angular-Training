@@ -42,3 +42,10 @@ body {
 .custom-tooltip {
   --bs-tooltip-bg: $primaryHoverColor;
 }
+
+@media (min-width: 1441px) {
+  footer {
+    position: absolute;
+    bottom: 0;
+  }
+}
