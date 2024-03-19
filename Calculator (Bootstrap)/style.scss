@@ -2,13 +2,11 @@
 $primaryBgColor: rgba(255, 255, 255, 0.15);
 $primaryBorder: 1px solid rgba(255, 255, 255, 0.1);
 $primaryHoverColor: rgb(0 82 142);
+
 body {
   background-image: url(Background.jpg);
   background-size: cover;
   font-family: "Poppins", sans-serif;
-}
-.navbar-text {
-  font-size: large !important;
 }
 .card {
   color: #fff;
@@ -42,7 +40,7 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-#calcDisplay {
+.display {
   height: 5rem !important;
 }
 
