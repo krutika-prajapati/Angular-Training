@@ -3,10 +3,11 @@ const buttons = document.getElementsByClassName("btn");
 const backspace = document.getElementById("backspace");
 const historyButton = document.querySelector(".history");
 const arithmeticOperators = ["+", "-", "%", "×", "÷", ".", ")"];
-
+const advanceArithmetic = ["sin", "cos", "tan", "log", "√"];
 let currentValue = "";
 let lastOperation = "";
 let history = [];
+let result;
 
 // Add Expression to History Array
 const addToHistory = (currentValue) => {
@@ -34,7 +35,7 @@ const evaluateResult = () => {
   });
 
   try {
-    const result = eval(convertedValue);
+    result = eval(convertedValue);
     currentValue = expression + " = " + result.toString();
     display.value = currentValue;
     addToHistory(currentValue);
@@ -49,38 +50,73 @@ const evaluateResult = () => {
 // Event listener for button click
 for (let i = 0; i < buttons.length; i++) {
   const button = buttons[i];
-  button.addEventListener("click", function () {
+  button.addEventListener("click", () => {
     const value = button.innerText;
     try {
-      if (value == "AC") {
+      //handle AC Button
+      if (value === "AC") {
         currentValue = "";
         display.value = currentValue;
         lastOperation = "";
       } else if (
+        //Handle Cases where display is cleared
         (currentValue === "" && arithmeticOperators.includes(value)) ||
-        (currentValue === "ERROR" && arithmeticOperators.includes(value))
+        (currentValue === "ERROR" && arithmeticOperators.includes(value)) ||
+        (currentValue === "" && value === "=")
       ) {
         display.value = "";
       } else if (
-        (lastOperation === "=" && arithmeticOperators.includes(value)) ||
+        //handle cases where consecutive arithmetic operators are entered
         (arithmeticOperators.includes(
           currentValue.charAt(currentValue.length - 1)
         ) &&
           currentValue.charAt(currentValue.length - 1) !== ")" &&
           arithmeticOperators.includes(value)) ||
-        (currentValue.charAt(currentValue.length - 1) == "(" &&
+        (currentValue.charAt(currentValue.length - 1) === "(" &&
           arithmeticOperators.includes(value))
       ) {
-      } else if (value == "=") {
-        evaluateResult();
+      } else if (value === "=") {
+        //Evaluate the result when "=" button is clicked
+        if (lastOperation === "=") {
+          display.value = currentValue;
+        } else {
+          evaluateResult();
+        }
+      } else if (
+        // Handle cases where the result is used in the next operation
+        lastOperation === "=" &&
+        arithmeticOperators.includes(value) &&
+        value !== ")" &&
+        result !== "ERROR"
+      ) {
+        currentValue = result + value;
+        display.value = currentValue;
+      } else if (
+        // Handle cases where the result is used in the next operation and next operation starts with ")"
+        lastOperation === "=" &&
+        arithmeticOperators.includes(value) &&
+        value === ")" &&
+        result !== "ERROR"
+      ) {
+        currentValue = result;
+        display.value = currentValue;
+      } else if (
+        //Handle cases where advance arithmetic functions are enterd
+        advanceArithmetic.includes(value) &&
+        currentValue !== "ERROR"
+      ) {
+        currentValue += value + "(";
+        display.value = currentValue;
       } else {
         if (lastOperation === "=") {
           currentValue = "";
           lastOperation = "";
         }
+        result = "";
         currentValue += value;
         display.value = currentValue;
       }
+      lastOperation = value;
     } catch (error) {
       currentValue = "ERROR";
       display.value = currentValue;
@@ -91,6 +127,10 @@ for (let i = 0; i < buttons.length; i++) {
 // Event listener for backspace button
 backspace.addEventListener("click", function () {
   if (currentValue !== "") {
+    if (currentValue === "ERROR") {
+      currentValue = "";
+      display.value = currentValue;
+    }
     currentValue = currentValue.slice(0, -1);
     display.value = currentValue;
   }
