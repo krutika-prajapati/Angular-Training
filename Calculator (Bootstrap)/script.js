@@ -107,6 +107,23 @@ for (let i = 0; i < buttons.length; i++) {
       ) {
         currentValue += value + "(";
         display.value = currentValue;
+      } else if (value === ".") {
+        let input = currentValue;
+        let temporaryValue = "";
+        for (let i = input.length - 1; i >= 0; i--) {
+          if (isNaN(+input[i]) && input[i] != ".") {
+            break;
+          } else {
+            temporaryValue = temporaryValue + input[i];
+          }
+        }
+        if (temporaryValue.includes(".")) {
+          return;
+        } else {
+          currentValue += value;
+          display.value = currentValue;
+          return;
+        }
       } else {
         if (lastOperation === "=") {
           currentValue = "";
