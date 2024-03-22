@@ -3,15 +3,13 @@ interface IAddress {
   street: string;
   pincode: number;
 }
-interface IContact {
-  phoneNumber: string | string[];
-}
+
 interface IPerson {
   firstname: string;
   lastname: string;
   age: number;
   address: IAddress;
-  contact?: IContact;
+  contact: string | string[];
   getFullName(): string;
   getFullAddress(): string;
 }
@@ -22,12 +20,10 @@ const personInfo = <IPerson>{
   age: 22,
   address: {
     city: "Ahmedabad",
-    street: "Vastral",
+    street: "street1",
     pincode: 382418,
   },
-  contact: {
-    phoneNumber: ["8989898999", "9999999999"],
-  },
+  contact: ["9999999999", "8888888888"],
   getFullName(): string {
     return `Fullname:${this.firstname} ${this.lastname}`;
   },
@@ -38,9 +34,4 @@ const personInfo = <IPerson>{
 
 console.log(personInfo.getFullName());
 console.log(personInfo.getFullAddress());
-console.log(personInfo.contact);
-
-//Output:
-// Fullname:Krutika Prajapati
-// Address:Vastral, Ahmedabad, 382418
-// { phoneNumber: [ '8989898999', '9999999999' ] }
+console.log(`Contact number: ${personInfo.contact}`);

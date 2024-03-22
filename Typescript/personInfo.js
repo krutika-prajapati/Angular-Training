@@ -4,12 +4,10 @@ var personInfo = {
     age: 22,
     address: {
         city: "Ahmedabad",
-        street: "Vastral",
+        street: "street1",
         pincode: 382418,
     },
-    contact: {
-        phoneNumber: ["8989898999", "9999999999"],
-    },
+    contact: ["9999999999", "8888888888"],
     getFullName: function () {
         return "Fullname:".concat(this.firstname, " ").concat(this.lastname);
     },
@@ -19,8 +17,4 @@ var personInfo = {
 };
 console.log(personInfo.getFullName());
 console.log(personInfo.getFullAddress());
-console.log(personInfo.contact);
-//Output:
-// Fullname:Krutika Prajapati
-// Address:Vastral, Ahmedabad, 382418
-// { phoneNumber: [ '8989898999', '9999999999' ] }
+console.log("Contact number: ".concat(personInfo.contact));
