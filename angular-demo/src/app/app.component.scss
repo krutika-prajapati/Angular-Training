@@ -1,0 +1,31 @@
+$primaryBgColor: rgba(255, 255, 255, 0.15);
+$primaryBorder: 1px solid rgba(255, 255, 255, 0.1);
+$primaryHoverColor: rgb(0 82 142);
+$primaryTextColor: #fff;
+
+.card {
+  color: $primaryTextColor;
+  background-color: $primaryBgColor;
+  border: $primaryBorder;
+  width: 100%;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: rgba(250, 245, 245, 0.24) 0px 0px 0.25em;
+}
+.btn,
+.display {
+  border-radius: 15px;
+  background-color: $primaryBgColor;
+  border: $primaryBorder;
+  backdrop-filter: blur(30px);
+  color: $primaryTextColor;
+}
+
+.btn:hover {
+  background-color: $primaryHoverColor;
+}
+
+.display:focus {
+  background-color: $primaryBgColor;
+  border: $primaryBorder;
+}
