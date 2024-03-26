@@ -1,127 +1,110 @@
-<!doctype html>
-<html lang="en">
+<!-- Navigation Bar -->
+<app-navbar></app-navbar>
+<div class="container">
+  <div class="row mt-3">
+    <div class="offset-md-3 col-md-6 col-12">
+      <div class="card">
+        <div class="card-body p-4">
+          <textarea readonly class="form-control text-end display overflow-auto text-light" id="calculator-display"
+            rows="3"></textarea>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Calculator</title>
-</head>
-
-<body>
-  <!-- Navigation Bar -->
-  <nav class="navbar w-100">
-    <h3 class="ms-3 navbar-text text-light">
-      Calculator
-    </h3>
-  </nav>
-  <div class="container">
-    <div class="row mt-3">
-      <div class="offset-md-3 col-md-6 col-12">
-        <div class="card">
-          <div class="card-body p-4">
-            <textarea readonly class="form-control text-end display overflow-auto text-light" id="calculator-display"
-              rows="3"></textarea>
-
-            <!-- Calculator buttons -->
-            <div class="row gx-2">
-              <div class="col-3">
-                <button type="button" class="btn w-100 mt-2" data-bs-toggle="tooltip" data-bs-placement="top"
-                  data-bs-title="sin(x)">sin</button>
-              </div>
-              <div class="col-3">
-                <button type="button" class="btn w-100 mt-2" data-bs-toggle="tooltip" data-bs-placement="top"
-                  data-bs-title="cos(x)">cos</button>
-              </div>
-              <div class="col-3">
-                <button type="button" class="btn w-100 mt-2" id="backspace"><i class="fa fa-long-arrow-left"
-                    aria-hidden="true"></i></button>
-              </div>
-              <div class="col-3">
-                <button type="button" class="btn w-100 mt-2 history"><i class="fa fa-history"
-                    aria-hidden="true"></i></button>
-              </div>
-              <div class="col-3">
-                <button type="button" class="btn w-100 mt-2" data-bs-toggle="tooltip" data-bs-placement="left"
-                  data-bs-title="log(x)">log</button>
-              </div>
-              <div class="col-3">
-                <button type="button" class="btn w-100 mt-2" data-bs-toggle="tooltip" data-bs-placement="top"
-                  data-bs-title="tan(x)">tan</button>
-              </div>
-              <div class="col-3">
-                <button type="button" class="btn w-100 mt-2">π</button>
-              </div>
-              <div class="col-3">
-                <button type="button" class="btn w-100 mt-2" data-bs-toggle="tooltip" data-bs-placement="right"
-                  data-bs-title="√(x)">√</button>
-              </div>
-              <div class="col-3">
-                <button type="button" class="btn w-100 mt-2">(</button>
-              </div>
-              <div class="col-3">
-                <button type="button" class="btn w-100 mt-2">)</button>
-              </div>
-              <div class="col-3">
-                <button type="button" class="btn w-100 mt-2">%</button>
-              </div>
-              <div class="col-3">
-                <button type="button" class="btn w-100 mt-2">÷</button>
-              </div>
-              <div class="col-3">
-                <button type="button" class="btn w-100 mt-2">7</button>
-              </div>
-              <div class="col-3">
-                <button type="button" class="btn w-100 mt-2">8</button>
-              </div>
-              <div class="col-3">
-                <button type="button" class="btn w-100 mt-2">9</button>
-              </div>
-              <div class="col-3">
-                <button type="button" class="btn w-100 mt-2">×</button>
-              </div>
-              <div class="col-3">
-                <button type="button" class="btn w-100 mt-2">4</button>
-              </div>
-              <div class="col-3">
-                <button type="button" class="btn w-100 mt-2">5</button>
-              </div>
-              <div class="col-3">
-                <button type="button" class="btn w-100 mt-2">6</button>
-              </div>
-              <div class="col-3">
-                <button type="button" class="btn w-100 mt-2">+</button>
-              </div>
-              <div class="col-3">
-                <button type="button" class="btn w-100 mt-2">1</button>
-              </div>
-              <div class="col-3">
-                <button type="button" class="btn w-100 mt-2">2</button>
-              </div>
-              <div class="col-3">
-                <button type="button" class="btn w-100 mt-2">3</button>
-              </div>
-              <div class="col-3">
-                <button type="button" class="btn w-100 mt-2">-</button>
-              </div>
-              <div class="col-3">
-                <button type="button" class="btn w-100 mt-2">0</button>
-              </div>
-              <div class="col-3">
-                <button type="button" class="btn w-100 mt-2">.</button>
-              </div>
-              <div class="col-3">
-                <button type="button" class="btn w-100 mt-2">AC</button>
-              </div>
-              <div class="col-3">
-                <button type="button" class="btn w-100 mt-2">=</button>
-              </div>
+          <!-- Calculator buttons -->
+          <div class="row gx-2">
+            <div class="col-3">
+              <button type="button" class="btn w-100 mt-2" data-bs-toggle="tooltip" data-bs-placement="top"
+                data-bs-title="sin(x)">sin</button>
             </div>
-
+            <div class="col-3">
+              <button type="button" class="btn w-100 mt-2" data-bs-toggle="tooltip" data-bs-placement="top"
+                data-bs-title="cos(x)">cos</button>
+            </div>
+            <div class="col-3">
+              <button type="button" class="btn w-100 mt-2" id="backspace"><i class="fa fa-long-arrow-left"
+                  aria-hidden="true"></i></button>
+            </div>
+            <div class="col-3">
+              <button type="button" class="btn w-100 mt-2 history"><i class="fa fa-history"
+                  aria-hidden="true"></i></button>
+            </div>
+            <div class="col-3">
+              <button type="button" class="btn w-100 mt-2" data-bs-toggle="tooltip" data-bs-placement="left"
+                data-bs-title="log(x)">log</button>
+            </div>
+            <div class="col-3">
+              <button type="button" class="btn w-100 mt-2" data-bs-toggle="tooltip" data-bs-placement="top"
+                data-bs-title="tan(x)">tan</button>
+            </div>
+            <div class="col-3">
+              <button type="button" class="btn w-100 mt-2">π</button>
+            </div>
+            <div class="col-3">
+              <button type="button" class="btn w-100 mt-2" data-bs-toggle="tooltip" data-bs-placement="right"
+                data-bs-title="√(x)">√</button>
+            </div>
+            <div class="col-3">
+              <button type="button" class="btn w-100 mt-2">(</button>
+            </div>
+            <div class="col-3">
+              <button type="button" class="btn w-100 mt-2">)</button>
+            </div>
+            <div class="col-3">
+              <button type="button" class="btn w-100 mt-2">%</button>
+            </div>
+            <div class="col-3">
+              <button type="button" class="btn w-100 mt-2">÷</button>
+            </div>
+            <div class="col-3">
+              <button type="button" class="btn w-100 mt-2">7</button>
+            </div>
+            <div class="col-3">
+              <button type="button" class="btn w-100 mt-2">8</button>
+            </div>
+            <div class="col-3">
+              <button type="button" class="btn w-100 mt-2">9</button>
+            </div>
+            <div class="col-3">
+              <button type="button" class="btn w-100 mt-2">×</button>
+            </div>
+            <div class="col-3">
+              <button type="button" class="btn w-100 mt-2">4</button>
+            </div>
+            <div class="col-3">
+              <button type="button" class="btn w-100 mt-2">5</button>
+            </div>
+            <div class="col-3">
+              <button type="button" class="btn w-100 mt-2">6</button>
+            </div>
+            <div class="col-3">
+              <button type="button" class="btn w-100 mt-2">+</button>
+            </div>
+            <div class="col-3">
+              <button type="button" class="btn w-100 mt-2">1</button>
+            </div>
+            <div class="col-3">
+              <button type="button" class="btn w-100 mt-2">2</button>
+            </div>
+            <div class="col-3">
+              <button type="button" class="btn w-100 mt-2">3</button>
+            </div>
+            <div class="col-3">
+              <button type="button" class="btn w-100 mt-2">-</button>
+            </div>
+            <div class="col-3">
+              <button type="button" class="btn w-100 mt-2">0</button>
+            </div>
+            <div class="col-3">
+              <button type="button" class="btn w-100 mt-2">.</button>
+            </div>
+            <div class="col-3">
+              <button type="button" class="btn w-100 mt-2">AC</button>
+            </div>
+            <div class="col-3">
+              <button type="button" class="btn w-100 mt-2">=</button>
+            </div>
           </div>
+
         </div>
       </div>
     </div>
   </div>
-</body>
-
-</html>
+</div>
